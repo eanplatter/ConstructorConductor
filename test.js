@@ -1,61 +1,20 @@
-/*
-  Your 3 Users will be the following. 
-    0) Tyler, tylermcginnis33@gmail.com, 'iLoveJS'
-    1) Cahlan, cahlan@devmounta.in, 'iLoveHashtags'
-    2) Lenny, lenny@theLenster.com, 'iLoveLentilSoup'
-*/
+//Create a Person constructor that accepts name and age as parameters and sets those properties accordingly in the Constructor.
 
-var User = function(name, email, pw){
-  this.name = name;
-  this.email = email;
-  this.pw = pw;
+var Person = function(name, age) {
+	this.name = name;
+	this.age = age;
 }
 
-//Create an Array called 'users' that will store all our instances of User.
+//Now create three instances of Person with data you make up
 
-users = [];
+var ean = new Person('ean', 24);
+var forrest = new Person('forrest', 24);
+var peter = new Person('peter', 24);
 
-//Now create and push into your users array 3 seperate instances of User using the data from above in that exact order
+//Now add a sayName method on your Person class that will alert the name of whatever Person instance called it.
 
-var tyler = new User('Tyler', 'tylermcginnis33@gmail.com', 'iLoveJS');
-var cahlan = new User('Cahlan', 'cahlan@devmounta.in', 'iLoveHashtags');
-var lenny = new User('Lenny', 'lenny@theLenster.com', 'iLoveLentilSoup');
-
-users.push(tyler);
-users.push(cahlan);
-users.push(lenny);
-
-
-
-
-
-console.log('Tyler\'s information is ');
-//Console.log all of Tylers information
-
-  console.log(tyler);
-
-console.log('Lenny\'s information is ');
-//Now console.log all of Lennys information
-
-  console.log(lenny);
-
-
-//Now create another instance of User using your own information and then add that to your users array.
-
-var ean = new User('Ean', 'eanplatter@gmail.com', '123iloveme');
-users.push(ean);
-
-
-console.log('All my users names are ');
-//Now loop through your users Array and console.log every users name. 
-
-for(var i = 0; i < users.length; i++) {
-  console.log(users[i].name);
+Person.prototype.sayName = function() {
+	console.log(this.name);
 }
 
-
-
-
-
-
-
+ean.sayName();
